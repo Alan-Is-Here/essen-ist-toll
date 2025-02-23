@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essen Ist Toll - Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container-fluid">
+            <nav class="navbar">
+                <div class="nav-links">
+                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link" href="about.html">About</a>
+                    <a class="nav-link" href="products.html">Products</a>
+                    <a class="nav-link" href="signup.html">Signup</a>
+                </div>
+                <div class="nav-actions">
+                    <form class="search-form">
+                        <input type="text" name="search" placeholder="Find product..." />
+                        <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </form>
+                    <button class="cart-btn" id="cart">
+                        <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                        Cart
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+<section class="centered-form">
+        <div id="login-form-area" class="mx-auto mt-3 p-3 rounded-4">
+            <form>
+                <h1 class="text-center mt-2">Login</h1>
+                <div class="mx-5 my-1">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" class="form-control" required>
+                </div>
+                <div class="mx-5 my-1">
+                    <label for="pw" class="form-label">Password</label>
+                    <input type="password" id="pw" class="form-control" required>
+                </div>
+                <h6 class="text-center"><a href="signup.html" id="signup-direct">Don't have an account? Sign up</a></h6>
+                <button type="submit" class="btn btn-primary mx-auto d-block mt-3">Login</button>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-item">
+            <div class="img-footer">
+                <img src="#" alt="" />
+            </div>
+            <div class="social-footer">
+                <li><a target="_blank" href="https://www.facebook.com/profile.php?id=100076290969946">
+                        <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                    </a></li>
+                <li><a target="_blank" href="https://github.com/Alan-Is-Here/JSA07-lect1">
+                        <i class="fa fa-github-square" aria-hidden="true"></i>
+                    </a></li>
+            </div>
+        </div>
+    </footer>
+    <!-- Firebase Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+
+    <!-- Config and App Scripts -->
+    <script src="js/firebase_config.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>

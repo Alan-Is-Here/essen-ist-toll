@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Essen Ist Toll</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+        .product-item {
+            width: 300px; /* Fixed width for product items */
+            margin: 15px;
+            transition: transform 0.2s; /* Smooth transition */
+        }
+        .product-item:hover {
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
+        .product-image {
+            width: 100%; /* Make image fill the container */
+            height: auto; /* Maintain aspect ratio */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container-fluid">
+            <nav class="navbar">
+                <div class="nav-links">
+                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link" href="about.html">About</a>
+                    <a class="nav-link" href="products.html">Products</a>
+                    <a class="nav-link" href="signup.html">Signup</a>
+                </div>
+                <div class="nav-actions">
+                    <form class="search-form">
+                        <input type="text" name="search" placeholder="Find product..." />
+                        <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </form>
+                    <button class="cart-btn" id="cart">
+                        <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                        Cart
+                    </button>
+                </div>
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Cart</h5>
+                            <span class="close">&times;</span>
+                        </div>
+                        <div class="modal-body">
+                            <div class="cart-row">
+                                <span class="cart-item cart-header cart-column">Product</span>
+                                <span class="cart-price cart-header cart-column">Price</span>
+                                <span class="cart-quantity cart-header cart-column">Quantity</span>
+                            </div>
+                            <div class="cart-items">
+                            </div>
+                            <div class="cart-total">
+                                <strong class="cart-total-title">Total</strong>
+                                <span class="cart-total-price">0VNĐ</span>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary close-footer">Close</button>
+                            <button type="button" class="btn btn-primary order">Check Out</button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="products">
+        <ul class="row">
+            
+        </ul>
+    </section>
+
+    <footer>
+        <div class="footer-item">
+            <div class="img-footer">
+                <img src="#" alt="" />
+            </div>
+            <div class="social-footer">
+                <li><a target="_blank" href="https://www.facebook.com/profile.php?id=100076290969946">
+                        <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                    </a></li>
+                <li><a target="_blank" href="https://github.com/Alan-Is-Here/JSA07-lect1">
+                        <i class="fa fa-github-square" aria-hidden="true"></i>
+                    </a></li>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="js/products.js"></script>
+</html>

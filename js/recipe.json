@@ -1,0 +1,142 @@
+[
+    {
+        "id": 1,
+        "title": "Sushi",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/6/60/Sushi_platter.jpg",
+        "price": 200000,
+        "description": "Japanese food with rice, seaweed and raw fish"
+    },
+    {
+        "id": 2,
+        "title": "Pana Cotta",
+        "image": "https://i0.wp.com/www.cosiitaliano.com/wp-content/uploads/2020/06/Panna-Cotta-with-Berries-scaled.jpg?resize=2048%2C1367&ssl=1",
+        "price": 50000,
+        "description": "A sweet yogurt dessert with commonly fruit toppings and whipping cream or fruit jams"
+    },
+    {
+        "id": 3,
+        "title": "Lasagna",
+        "image": "https://th.bing.com/th/id/OIP.lXC61qS_brmbVA2FyqEx3AHaGG?rs=1&pid=ImgDetMain",
+        "price": 150000,
+        "description": "Italian food with pasta sheet, bongolie and cheese"
+    },
+    {
+        "id": 4,
+        "title": "Beef Wellington",
+        "image": "https://allnutritious.com/wp-content/uploads/2023/02/1.-Classic-Beef-Wellington.jpg",
+        "price": 500000,
+        "description": "Beef that cast iron and roll in dough sheet, baked at 180 degree Celcius with diced mushroom"
+    },
+    {
+        "id": 5,
+        "title": "Surf and Turf",
+        "image": "https://allnutritious.com/wp-content/uploads/2023/02/5.-Surf-and-Turf.jpg",
+        "price": 250000,
+        "description": "The combining many types of seafood and red meat"
+    },
+    {
+        "id": 6,
+        "title": "Filet Mignon",
+        "image": "https://allnutritious.com/wp-content/uploads/2023/02/11.-Filet-Mignon-in-Cast-Iron.jpg",
+        "price": 450000,
+        "description": "A filet mignon cast iron with butter and rosemary"
+    },
+    {
+        "id": 7,
+        "title": "Shrimp Baked Potato",
+        "image": "https://allnutritious.com/wp-content/uploads/2023/02/18.-Shrimp-Baked-Potato.jpg",
+        "price": 300000,
+        "description": "Baked potato with fancy shrimps and cheesy garlic butter sauce"
+    },
+    {
+        "id": 8,
+        "title": "Tomahank Ribeye Steak",
+        "image": "https://allnutritious.com/wp-content/uploads/2023/02/22.-Tomahawk-Ribeye-Steak.jpg",
+        "price": 1850000,
+        "description": "A Ribeye steak cut like a tomahank axe with delicious meat and juicy fat"
+    },
+    {
+        "id": 9,
+        "title": "Shrimp Scampi",
+        "image": "https://th.bing.com/th/id/OIP.V2lRVx3VZOlJVf0-GTkAaQAAAA?rs=1&pid=ImgDetMain",
+        "price": 350000,
+        "description": "Juicy shrimp cooked in a garlic, lemon, and white wine sauce, served over a bed of linguine A savory delight from the sea"
+    },
+    {
+        "id": 10,
+        "title": "Margherita Pizza",
+        "image": "https://th.bing.com/th/id/OIP.Ist2SwT9LoLJv7hiDgOwRQHaFj?rs=1&pid=ImgDetMain",
+        "price": 400000,
+        "description": "A simple yet flavorful pizza topped with fresh tomatoes, mozzarella cheese, and basil leaves Originating from Naples, Italy, it's a true classic"
+    },
+    {
+        "id": 11,
+        "title": "Pad Thai",
+        "image": "https://th.bing.com/th/id/OIP.xjgEqaKOzP9rCS9T3OMmQgHaHa?rs=1&pid=ImgDetMain",
+        "price": 550000,
+        "description": "Stir-fried rice noodles with shrimp, tofu, egg, and bean sprouts, topped with crushed peanuts and lime A staple of Thai street food"
+    },
+    {
+        "id": 12,
+        "title": "Churros",
+        "image": "https://cdn.totallythebomb.com/wp-content/uploads/2022/07/churro-stock-735x1081.png",
+        "price": 650000,
+        "description": "Deep-fried dough pastries sprinkled with cinnamon sugar, often served with a side of chocolate dipping sauce A sweet treat from Spain"
+    },
+    {
+        "id": 13,
+        "title": "Gumbo",
+        "image": "https://th.bing.com/th/id/R.5c43f95ade562e8a57b6e436350a3384?rik=M8VFT64DdhWh8w&pid=ImgRaw&r=0",
+        "price": 800000,
+        "description": "A hearty Creole stew from Louisiana made with okra, shrimp, sausage, and chicken, served over rice Rich and flavorful with a slight kick"
+    },
+    {
+        "id": 14,
+        "title": "Tacos Al Pastor",
+        "image": "https://th.bing.com/th/id/OIP.y-dXCFWoMM_DmNI5tfyiHgHaE8?rs=1&pid=ImgDetMain",
+        "price": 600000,
+        "description": "Mexican street food featuring marinated pork shaved from a vertical spit, served on corn tortillas with pineapple, cilantro, and onions"
+    },
+    {
+        "id": 15,
+        "title": "Baklava",
+        "image": "https://th.bing.com/th/id/R.8fcc40ee321640e873636cf76369a7c3?rik=YqaIxWJKHweT6Q&pid=ImgRaw&r=0",
+        "price": 700000,
+        "description": "A rich, sweet pastry made of layers of filo dough filled with chopped nuts and sweetened with syrup or honey A delicacy from the Middle East"
+    },
+    {
+        "id": 16,
+        "title": "Bibimbap",
+        "image": "https://th.bing.com/th/id/OIP.gKkwVPy2BwXfjPbn9J7O8wHaE8?rs=1&pid=ImgDetMain",
+        "price": 750000,
+        "description": "A Korean dish of rice topped with assorted vegetables, beef, a fried egg, and spicy gochujang sauce Mix it all together for a burst of flavors"
+    },
+    {
+        "id": 17,
+        "title": "Risotto",
+        "image": "https://th.bing.com/th/id/OIP.cumYkeoIG8XL-RBUMZ5L5AHaHa?rs=1&pid=ImgDetMain",
+        "price": 900000,
+        "description": "An Italian rice dish cooked with broth until creamy, often made with ingredients like mushrooms, seafood, or saffron"
+    },
+    {
+        "id": 18,
+        "title": "Falafel",
+        "image": "https://th.bing.com/th/id/OIP.4CHomGtX_TltwUCkhqLYggHaHa?rs=1&pid=ImgDetMain",
+        "price": 9500000,
+        "description": "Deep-fried balls or patties made from ground chickpeas, herbs, and spices Typically served in pita bread with hummus and veggies"
+    },
+    {
+        "id": 19,
+        "title": "Duck à l'Orange",
+        "image": "https://www.seriouseats.com/thmb/jxqSnAy1G3GyXuilhCESdNPg72g=/1500x1125/filters:fill(auto,1)/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__2018__11__20181023-duck-a-l-orange-vicky-wasik-36-2cbe64627b0246e5a4133c5ec40b276d.jpg",
+        "price": 1000000,
+        "description": "A classic French dish where duck breast is seared to a crispy perfection and then glazed with a rich, tangy orange sauce The balance of sweet and savory flavors makes it a luxurious experience"
+    },
+    {
+        "id": 20,
+        "title": "Beef Bourguignon",
+        "image": "https://th.bing.com/th/id/OIP.CUEmBRiMiwj0vDKseYHxMwHaFj?rs=1&pid=ImgDetMain",
+        "price": 1500000,
+        "description": "A traditional French beef stew where tender chunks of beef are slow-cooked in a red wine sauce with mushrooms, onions, and carrots This hearty and flavorful dish is perfect for impressing guests at a dinner party"
+    }
+]
