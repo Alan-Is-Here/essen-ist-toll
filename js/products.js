@@ -131,27 +131,30 @@ async function getProductAPI() {
 function loadProducts(data) {
     console.log("Loading products:", data); // Log the loaded products
     for (let i = 0; i < data.length; i++) {
-        let output = `<li class="product-item">
-            <div class="product-container">
-                <div class="img-product">
-                    <img class="product-image" src="${data[i].image}" alt="${data[i].title}">
-                </div>
-                <div class="product-overlay">
-                    <h3 class="content-product-h3">${data[i].title}</h3>
-                    <div class="content-product-description">
-                        ${data[i].description}
+        let output = `
+        <li>
+            <div class="product-item card">
+                <div class="product-container card-inner">
+                    <div class="img-product card-front">
+                        <img class="product-image" src="${data[i].image}" alt="${data[i].title}">
                     </div>
-                    <div class="content-product-info">
-                        <span class="cuisine">${data[i].cuisine || 'International Cuisine'}</span>
-                    </div>
-                    <div class="content-product-deltals">
-                        <div class="price">
-                            <span class="money">${data[i].price.toLocaleString()}đ</span>
+                    <div class="product-overlay card-back">
+                        <h3 class="content-product-h3">${data[i].title}</h3>
+                        <div class="content-product-description">
+                            ${data[i].description}
                         </div>
-                        <button type="button" class="btn btn-cart" onclick="addItemToCart(event)">
-                            <i class="fa fa-shopping-cart"></i>
-                            Add To Cart
-                        </button>
+                        <div class="content-product-info">
+                            <span class="cuisine">${data[i].cuisine || 'International Cuisine'}</span>
+                        </div>
+                        <div class="content-product-deltals">
+                            <div class="price">
+                                <span class="money">${data[i].price.toLocaleString()}đ</span>
+                            </div>
+                            <button type="button" class="btn btn-cart" onclick="addItemToCart(event)">
+                                <i class="fa fa-shopping-cart"></i>
+                                Add To Cart
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
