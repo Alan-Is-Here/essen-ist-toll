@@ -62,12 +62,10 @@ for (var i = 0; i < quantity_input.length; i++) {
 function addItemToCart(event) {
   event.preventDefault();
   var button = event.target;
-  var product = button.closest(".main-product");
-  var img = product.querySelector(".img-prd").src;
-  var title = product.querySelector(".content-product-h3").innerText;
-  var priceText = product.querySelector(".price").innerText;
-  var price = parseFloat(priceText.replace(/[^0-9.-]+/g, ""));
-
+  // var product = button.closest(".main-product");
+  var title = button.parentElement.parentElement.childNodes[1].innerText;
+  // var priceText = product.querySelector(".price").innerText;
+  var price = button.parentElement.parentElement.childNodes[7].childNodes[1].childNodes[1].innerText;
   var cartItems = document.querySelector(".cart-items");
   var cartTitles = cartItems.getElementsByClassName("cart-item-title");
   for (var i = 0; i < cartTitles.length; i++) {
@@ -81,10 +79,9 @@ function addItemToCart(event) {
   cartRow.classList.add("cart-row");
   cartRow.innerHTML = `
     <div class="cart-item cart-column">
-      <img class="cart-item-image" src="${img}" width="100" height="100">
       <span class="cart-item-title">${title}</span>
     </div>
-    <span class="cart-price cart-column">${priceText}</span>
+    <span class="cart-price cart-column">${price}đ</span>
     <div class="cart-quantity cart-column">
       <input class="cart-quantity-input" type="number" value="1" min="1">
       <button class="btn btn-danger btn-remove" type="button" onclick="removeFromCart(event)">Delete</button>
@@ -143,14 +140,15 @@ function loadProducts(data) {
                         <div class="content-product-description">
                             ${data[i].description}
                         </div>
+
                         <div class="content-product-info">
                             <span class="cuisine">${data[i].cuisine || 'International Cuisine'}</span>
                         </div>
                         <div class="content-product-deltals">
                             <div class="price">
-                                <span class="money">${data[i].price.toLocaleString()}đ</span>
+                                <span class="money">${data[i].price}</span>đ
                             </div>
-                            <button type="button" class="btn btn-cart" onclick="addItemToCart(event)">
+                            <button type="button" class="btn btn-cart btn-buy" onclick="addItemToCart(event)">
                                 <i class="fa fa-shopping-cart"></i>
                                 Add To Cart
                             </button>

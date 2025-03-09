@@ -6,25 +6,23 @@ var order = document.getElementsByClassName("order")[0];
 
 btn.onclick = function () {
   modal.style.display = "block";
-}
+};
 
-close.onclick = function () {
-  modal.style.display = "none";
-}
-
-close_footer.onclick = function () {
-  modal.style.display = "none";
-}
+[close, close_footer].forEach(function (element) {
+  element.onclick = function () {
+    modal.style.display = "none";
+  };
+});
 
 order.onclick = function () {
-  alert("Cảm ơn bạn đã thanh toán đơn hàng")
-}
+  alert("Cảm ơn bạn đã thanh toán đơn hàng");
+};
 
 window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
-}
+};
 
 function removeFromCart(event) {
   event.preventDefault();
@@ -37,6 +35,7 @@ function updatecart() {
   var cart_item = document.getElementsByClassName("cart-items")[0];
   var cart_rows = cart_item.getElementsByClassName("cart-row");
   var total = 0;
+
   for (var i = 0; i < cart_rows.length; i++) {
     var cart_row = cart_rows[i];
     var price_item = cart_row.getElementsByClassName("cart-price")[0];
@@ -63,38 +62,32 @@ for (var i = 0; i < quantity_input.length; i++) {
 function addItemToCart(event) {
   event.preventDefault();
   var button = event.target;
-  var product = button.closest(".main-product");
-  var img = product.querySelector(".img-prd").src;
-  var title = product.querySelector(".content-product-h3").innerText;
-  var priceText = product.querySelector(".price").innerText;
-  var price = parseFloat(priceText.replace(/[^0-9.-]+/g, "")); // Remove non-numeric characters and parse as float
-
-  modal.style.display = "block";
-
+  // var product = button.closest(".main-product");
+  var title = button.parentElement.parentElement.childNodes[1].innerText;
+  // var priceText = product.querySelector(".price").innerText;
+  var price = button.parentElement.childNodes[1].childNodes[1].innerText;
   var cartItems = document.querySelector(".cart-items");
   var cartTitles = cartItems.getElementsByClassName("cart-item-title");
   for (var i = 0; i < cartTitles.length; i++) {
-    if (cartTitles[i].innerText == title) {
-      alert('Sản Phẩm Đã Có Trong Giỏ Hàng');
+    if (cartTitles[i].innerText === title) {
+      alert("Sản Phẩm Đã Có Trong Giỏ Hàng");
       return;
     }
   }
 
-  var cartRow = document.createElement('div');
-  cartRow.classList.add('cart-row');
-  var cartRowContents = `
+  var cartRow = document.createElement("div");
+  cartRow.classList.add("cart-row");
+  cartRow.innerHTML = `
     <div class="cart-item cart-column">
-      <img class="cart-item-image" src="${img}" width="100" height="100">
       <span class="cart-item-title">${title}</span>
     </div>
-    <span class="cart-price cart-column">${priceText}</span>
+    <span class="cart-price cart-column">${price}đ</span>
     <div class="cart-quantity cart-column">
       <input class="cart-quantity-input" type="number" value="1" min="1">
       <button class="btn btn-danger btn-remove" type="button" onclick="removeFromCart(event)">Delete</button>
     </div>`;
-  cartRow.innerHTML = cartRowContents;
+    
   cartItems.append(cartRow);
-
   cartRow.querySelector('.cart-quantity-input').addEventListener('change', function (event) {
     var input = event.target;
     if (isNaN(input.value) || input.value <= 0) {
@@ -103,6 +96,7 @@ function addItemToCart(event) {
     updatecart();
   });
 
+  modal.style.display = "block";
   updatecart();
 }
 
@@ -115,32 +109,47 @@ function initApi() {
 }
 
 async function getProductAPI() {
-  let data = await fetch('js/recipe.json')
-    .then(response => response.json())
-    .then(json => json);
+  let response = await fetch('js/recipe.json').catch(error => {
+      console.error("Error fetching the product data:", error);
+  });
+  
+  if (!response.ok) {
+      console.error("HTTP error:", response.status);
+      return;
+  }
+  
+  let data = await response.json();
   console.log(data);
   loadProducts(data);
+console.log(data);
+loadProducts(data);
 }
 
 function loadProducts(data) {
+  console.log("Loading products:", data); // Log the loaded products
   for (let i = 0; i < data.length; i++) {
-    let output = `<li class="product-item">
-      <div class="img-product">
-        <img class="product-image" src="${data[i].image}" alt="${data[i].title}">
-      </div>
-      <div class="content-product">
-        <h3 class="content-product-h3">${data[i].title}</h3>
-        <div class="content-product-deltals">
-          <div class="price">
-            <span class="money">${data[i].price.toLocaleString()}đ</span>
+      let output = `
+      <li>
+          <div class="product-item card">
+              <div class="product-container card-inner">
+                  <div class="img-product card-front">
+                      <img class="product-image" src="${data[i].image}" alt="${data[i].title}">
+                  </div>
+                  <div class="product-overlay card-back">
+                      <h3 class="content-product-h3 ">${data[i].title}</h3>
+                      <div class="content-product-deltals">
+                          <div class="price">
+                              <span class="money">${data[i].price}</span>đ
+                          </div>
+                          <button type="button" class="btn btn-cart btn-buy" onclick="addItemToCart(event)">
+                              <i class="fa fa-shopping-cart"></i>
+                              Add To Cart
+                          </button>
+                      </div>
+                  </div>
+              </div>
           </div>
-          <button type="button" class="btn btn-cart" onclick="addItemToCart(event)">
-            <i class="fa fa-shopping-cart"></i>
-            Add To Cart
-          </button>
-        </div>
-      </div>
-    </li>`;
-    product_area.innerHTML += output;
+      </li>`;
+      product_area.innerHTML += output;
   }
 }
