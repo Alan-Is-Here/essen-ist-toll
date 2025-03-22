@@ -3,13 +3,13 @@ const auth = firebase.auth();
 const db = firebase.firestore();
 
 // Get form elements
-const signupForm = document.querySelector('sform');
-const firstNameInput = document.getElementById('fname');
-const lastNameInput = document.getElementById('lname');
-const emailInput = document.getElementById('email');
-const passwordInput = document.getElementById('pw');
-const confirmPasswordInput = document.getElementById('cf-pw');
-const loginDirectLink = document.getElementById('login-direct');
+const signupForm = document.querySelector('#sform');
+const firstNameInput = document.querySelector('#fname');
+const lastNameInput = document.querySelector('#lname');
+const emailInput = document.querySelector('#email');
+const passwordInput = document.querySelector('#pw');
+const confirmPasswordInput = document.querySelector('#cf-pw');
+const loginDirectLink = document.querySelector('#login-direct');
 
 // Function to validate email format
 function isValidEmail(email) {
