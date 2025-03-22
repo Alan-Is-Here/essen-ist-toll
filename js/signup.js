@@ -3,7 +3,7 @@ const auth = firebase.auth();
 const db = firebase.firestore();
 
 // Get form elements
-const signupForm = document.querySelector('form');
+const signupForm = document.querySelector('sform');
 const firstNameInput = document.getElementById('fname');
 const lastNameInput = document.getElementById('lname');
 const emailInput = document.getElementById('email');
@@ -54,33 +54,36 @@ async function signup(event) {
         return;
     }
 
-    try {
-        // Create user with email and password
-        const userCredential = await auth.createUserWithEmailAndPassword(email, password);
-        const user = userCredential.user;
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+            var user = userCredential.user;
 
-        // Add user details to Firestore
-        await db.collection('users').doc(user.uid).set({
-            firstName: firstName,
-            lastName: lastName,
-            email: email,
-            createdAt: firebase.firestore.FieldValue.serverTimestamp()
+            let userData = {
+                username,
+                email,
+                password,
+                role_id: role_id
+            };
+
+            // lưu user vào firestore
+            db.collection("users").add(userData)
+                .then((ref) => {
+                    alert("Register successfully!");
+                    window.location.href = "/index.html";
+                    console.log("Document written with ID: ", ref.id);
+                })
+                .catch((error) => {
+                    alert("Register fail!");
+                    console.error("Error is: ", error);
+                });
+        })
+        .catch((error) => {
+            var errorCode = error.code;
+            var errorMsg = error.message;
+
+            // alert(`Error: ${errorMsg}`);
+            console.log(errorMsg);
         });
-
-        // Clear form
-        signupForm.reset();
-        
-        // Redirect to login page
-        window.location.href = 'login.html';
-        
-    } catch (error) {
-        if (error.code === 'auth/email-already-in-use') {
-            alert('This email is already registered. Please login instead.');
-            window.location.href = 'login.html';
-        } else {
-            alert('Error creating account: ' + error.message);
-        }
-    }
 }
 
 // Add event listeners

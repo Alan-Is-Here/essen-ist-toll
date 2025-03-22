@@ -2,7 +2,7 @@
 const auth = firebase.auth();
 
 // Get form elements
-const loginForm = document.querySelector('form');
+const loginForm = document.querySelector('lform');
 const emailInput = document.getElementById('email');
 const passwordInput = document.getElementById('pw');
 
