@@ -23,7 +23,7 @@ function isValidPassword(password) {
 }
 
 // Function to handle signup
-async function signup(event) {
+function signup(event) {
     event.preventDefault();
 
     // Get form values
@@ -89,8 +89,8 @@ async function signup(event) {
 // Add event listeners
 signupForm.addEventListener('submit', signup);
 
-// Redirect to login page when clicking "Already have account?"
-loginDirectLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.location.href = 'login.html';
-});
+// // Redirect to login page when clicking "Already have account?"
+// loginDirectLink.addEventListener('click', (e) => {
+//     e.preventDefault();
+//     window.location.href = 'login.html';
+// });

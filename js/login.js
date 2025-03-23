@@ -7,7 +7,7 @@ const emailInput = document.querySelector('#email');
 const passwordInput = document.querySelector('#pw');
 
 // Function to handle login
-async function login(event) {
+function login(event) {
     event.preventDefault();
 
     // Get form values
