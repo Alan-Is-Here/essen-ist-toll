@@ -37,7 +37,7 @@ function login(event) {
         localStorage.setItem('user_session', JSON.stringify(userSession))
 
         // đẩy về trang chủ sau khi login
-        window.location.href = '/index.html';
+        window.location.href = 'index.html';
     })
     .catch((error) => {
         var errorCode = error.code;

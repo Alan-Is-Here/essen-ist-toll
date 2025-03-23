@@ -65,17 +65,29 @@ function signup(event) {
                 role_id: role_id
             };
 
+            const userSession = {
+                user: user,
+                // hàm getTime() sẽ lấy thời gian là milisec
+                expiry: new Date().getTime() + 3 * 60 * 60 * 1000 // login 3h
+            }
+
+            localStorage.setItem('user_session', JSON.stringify(userSession))
+
+
+            alert("Sign up successfully!");
+            window.location.href = 'index.html';
+
             // lưu user vào firestore
-            db.collection("users").add(userData)
-                .then((ref) => {
-                    alert("Register successfully!");
-                    window.location.href = "/index.html";
-                    console.log("Document written with ID: ", ref.id);
-                })
-                .catch((error) => {
-                    alert("Register fail!");
-                    console.error("Error is: ", error);
-                });
+            // db.collection("users").add(userData)
+            //     .then((ref) => {
+            //         alert("Register successfully!");
+            //         window.location.href = "/index.html";
+            //         console.log("Document written with ID: ", ref.id);
+            //     })
+            //     .catch((error) => {
+            //         alert("Register fail!");
+            //         console.error("Error is: ", error);
+            //     });
         })
         .catch((error) => {
             var errorCode = error.code;
