@@ -37,6 +37,7 @@
 .about-section {
     padding: 4rem 0;
     background: #f8f9fa;
+    z-index: 9999;
 }
 
 .container {
